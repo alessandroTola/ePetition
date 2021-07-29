@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PetitionController;
+use App\Models\Petition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//To show all petitions
+//Route::get('/petitions', [PetitionController::class, 'index']);
+
+//To store a new petition
+//Route::post('/petitions', [PetitionController::class, 'store']);
+
+//If we want only some controller methods
+//Route::resource('/petitions', PetitionController::class)->only(['index', 'show']);
+
+//Using apiResource
+Route::apiResource('/petitions', PetitionController::class);
