@@ -47,11 +47,11 @@ class PetitionController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Petition  $petition
-     * @return \Illuminate\Http\Response
+     * @return PetitionResurce
      */
     public function show(Petition $petition)
     {
-        //
+        return new  PetitionResource($petition);
     }
 
     /**
