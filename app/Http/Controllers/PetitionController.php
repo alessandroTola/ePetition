@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PetitionCollection;
+use App\Http\Resources\PetitionResource;
 use App\Models\Petition;
 use Illuminate\Http\Request;
 
@@ -10,11 +12,20 @@ class PetitionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        //
+        //If we are implementing the web application we can do like that
+        //$petitions = Petition::all();
+
+	    //return view('petition.idex')->with('petition', $petitions);
+
+        //But we ara implemeting the API, so we need to do like that
+        //return PetitionCollection::collection($petitions);
+
+        //return PetitionResource::collection(Petition::all());
+        return new PetitionCollection(Petition::all());
     }
 
     /**
