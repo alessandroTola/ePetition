@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PetitionController;
+use App\Http\Controllers\AuthorController;
 use App\Models\Petition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Using apiResource
 Route::apiResource('/petitions', PetitionController::class);
+
+//Create resource route for only index e show action for the AuthorController
+Route::resource('/authors', AuthorController::class)->only(['index', 'show']);
+
