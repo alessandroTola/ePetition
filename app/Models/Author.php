@@ -10,4 +10,11 @@ class Author extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+     /**
+     * Get the petition fot the author
+     */
+    public function petitions(){
+        return $this->hasMany(Petition::class);
+    }
 }

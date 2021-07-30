@@ -16,5 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         //Petition::factory(50)->create();
+        $this->call([
+            AuthorSeeder::class,
+            PetitionSeeder::class,
+        ]);
+
     }
 }

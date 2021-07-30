@@ -8,6 +8,7 @@ use App\Models\Petition;
 //use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class PetitionController extends Controller
 {
@@ -29,7 +30,12 @@ class PetitionController extends Controller
         //return PetitionResource::collection(Petition::all());
         //return new PetitionCollection(Petition::all());
 
-        return response()->json(new PetitionCollection(Petition::all()), Response::HTTP_OK);
+        //return response()->json(new PetitionCollection(Petition::all()), Response::HTTP_OK);
+        $authors = DB::table('petitions')
+        ->join('authors', 'petitions.author_id', '=', 'authors.id')
+        ->get();
+
+        return new PetitionCollection($authors);
     }
 
     /**

@@ -13,4 +13,11 @@ class Petition extends Model
     protected $fillable = ['title', 'description', 'category', 'author', 'signees'];
 
     //protected $guarded = [];
+
+      /**
+     * Get the author that owns the petition
+     */
+    public function Author(){
+        return $this->belongsTo(Author::class);
+    }
 }

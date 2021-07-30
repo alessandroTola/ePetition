@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Author;
+use App\Models\Petition;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AuthorFactory extends Factory
@@ -25,4 +26,6 @@ class AuthorFactory extends Factory
             'name' => $this->faker->name,
         ];
     }
+
+
 }

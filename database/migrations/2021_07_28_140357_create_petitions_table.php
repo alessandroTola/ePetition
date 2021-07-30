@@ -18,7 +18,8 @@ class CreatePetitionsTable extends Migration
             $table->string('title');
             $table->text('category');
             $table->text('description');
-            $table->string('author');
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')->references('id')->on('author');
             $table->integer('signees');
             $table->timestamps();
         });
