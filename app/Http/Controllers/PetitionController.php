@@ -33,6 +33,7 @@ class PetitionController extends Controller
         //return response()->json(new PetitionCollection(Petition::all()), Response::HTTP_OK);
         $authors = DB::table('petitions')
         ->join('authors', 'petitions.author_id', '=', 'authors.id')
+        ->where('authors.name', '=', 'Paula Harvey')
         ->get();
 
         return new PetitionCollection($authors);
