@@ -1,3 +1,44 @@
+## About Petition project
+
+In this project you can find an example to implement a simple API for create a petitions. The project has 2 main classes, Petition and the Author of the petition. 
+
+The project is subdivided in incremental branches as follows:
+
+### 00_model_factory_sedder
+Creation of base project and Petion model, controller, API resource, factory and seeder using php artisan 
+
+### 01_databse_configuration
+Creation of migrations files for Petition
+
+### 02_factory_seeders
+Definition of Petition factory using faker class, creation of 50 entries Petition in the database
+
+### 03_routes_apiresource
+Create routes using apiresource to map each PetitionController methods
+
+### 04_exercises_solution
+Solution for the individual exercises, create a Author files
+
+### 05_API_resource_todisplay_all_petitions
+Implement the index method in the petition controller for showing all petition in the database. Define the structure to response a json file for single response o a collection of petition 
+
+### 06_API_resource_save_a_petition
+Implement a store method in the petition controller for store a petition into the tadabase
+
+### 07_API_resource_show_a_petition
+Implement a show method in the petition controller for showing a single petition
+
+### 08_API_resource_update_a_petition
+Implement a update method in the petition controller for updatating an existing petition
+
+### 09_API_resource_delete_a_petition
+Implement a delete method in the petition controller for deleting an existing petition
+
+### 10_exercises_solution
+Solution for the individual exercises, implement all method for the author class, like what we done for the petition class
+
+### 11_create_join_from_author_table
+Create a migration file to add foreign key from the patition table to the author id. Update the factory class to create joined data. Add relationship in the model class.
 
 ## About Laravel
 
